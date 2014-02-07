@@ -28,6 +28,7 @@ class Processor
             return $actualParams;
         }
 
+        var_dump($params);
         foreach ($params as $key => $value) {
              $actualParams[$key] = $this->io->ask(
                  $this->io->ask("<question>%s</question> (<comment>%s</comment>)", $key, $value),
