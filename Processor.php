@@ -64,7 +64,8 @@ class Processor
                 rename($target, $dir . DIRECTORY_SEPARATOR . $name);
             } else if (preg_match("/example-ini.php/", $name)) {
                 $dir = dirname($target);
-                rename($target, $dir . DIRECTORY_SEPARATOR . $config['project']);
+                $name = preg_replace("/example/", $config['project'], $name);
+                rename($target, $dir . DIRECTORY_SEPARATOR . $name);
             }
         }
     }
