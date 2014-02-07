@@ -52,6 +52,12 @@ class Processor
         );
 
         $project_class = self::camerize($config['project']);
+        if ($config['renderer'] == 'twig') {
+            $data = file_get_contents("app/Example_Controller.php");
+            $data = preg_replace("/Ethna_Renderer_Smarty/", "Ethna_Renderer_Twig", $data);
+            file_put_contents("app/Example_Controller.php", $data);
+        }
+
         foreach ($targets as $target) {
             $data = file_get_contents($target);
             $data = preg_replace("/Example/", $project_class, $data);
@@ -68,12 +74,6 @@ class Processor
                 $name = preg_replace("/example/", $config['project'], $name);
                 rename($target, $dir . DIRECTORY_SEPARATOR . $name);
             }
-        }
-
-        if ($config['renderer'] == 'twig') {
-            $data = file_get_contents("app/Example_Controller.php");
-            $data = preg_replace("/Ethna_Renderer_Smarty/", "Ethna_Renderer_Twig", $data);
-            file_put_contents("app/Example_Controller.php", $data);
         }
     }
 
