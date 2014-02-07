@@ -7,6 +7,11 @@ class ScriptHandler
 {
     public static function buildProject(Event $event)
     {
-        var_dump($event->getComposer()->getPackage());
+        $event->getComposer()->getPackage()->getExtra();
+
+        $processor = new Processor($event->getIO());
+        $processor->perform(array(
+            "project" => "example",
+        ));
     }
 }
