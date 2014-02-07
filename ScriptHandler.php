@@ -9,6 +9,9 @@ class ScriptHandler
     {
         $event->getComposer()->getPackage()->getExtra();
         var_dump($event->getComposer()->getPackage()->getName());
+        var_dump($event->getComposer()->getPackage()->getTargetDir());
+        var_dump($event->getName());
+        //var_dump($event-)
 
         $processor = new Processor($event->getIO());
         $processor->perform(array(
