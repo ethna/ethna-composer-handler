@@ -55,6 +55,7 @@ class Processor
         foreach ($targets as $target) {
             $data = file_get_contents($target);
             $data = preg_replace("/Example/", $project_class, $data);
+            $data = preg_replace("/EXAMPLE/", strtoupper($project_class), $data);
             file_put_contents($target, $data);
             $name = basename($target);
 
