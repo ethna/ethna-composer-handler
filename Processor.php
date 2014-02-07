@@ -69,6 +69,12 @@ class Processor
                 rename($target, $dir . DIRECTORY_SEPARATOR . $name);
             }
         }
+
+        if ($config['renderer'] == 'twig') {
+            $data = file_get_contents("app/Example_Controller.php");
+            $data = preg_replace("/Ethna_Renderer_Smarty/", "Ethna_Renderer_Twig", $data);
+            file_put_contents("app/Example_Controller.php", $data);
+        }
     }
 
     protected static function camerize($name)
