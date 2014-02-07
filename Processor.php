@@ -29,7 +29,10 @@ class Processor
         }
 
         foreach ($params as $key => $value) {
-             $actualParams[$key] = $this->io->ask($this->io->ask("<question>Hello World</question> (<comment>hoge</comment>"));
+             $actualParams[$key] = $this->io->ask(
+                 $this->io->ask("<question>%s</question> (<comment>%s</comment>)", $key, $value),
+                 $value
+             );
         }
         return $actualParams;
     }
