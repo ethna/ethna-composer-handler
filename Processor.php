@@ -45,8 +45,6 @@ class Processor
             "skel/skel.template.tpl",
             "skel/skel.view.php",
             "www/index.php",
-            "www/info.php",
-            "www/xmlrpc.php",
         );
 
         $project_class = self::camerize($config['project']);
