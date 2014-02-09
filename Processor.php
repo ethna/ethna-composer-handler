@@ -77,7 +77,7 @@ class Processor
         }
 
         file_put_contents(".ethna", sprintf("[project]\ncontroller_file = '%s'\ncontroller_class = '%s'",
-            "app/{$project_class}_Controller.php/",
+            "app/{$project_class}_Controller.php",
             "{$project_class}_Controller"));
     }
 
