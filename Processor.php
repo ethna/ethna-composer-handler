@@ -20,6 +20,10 @@ class Processor
 
     public function perform($configs)
     {
+        if (is_file(".ethna")) {
+            return;
+        }
+
         $config = array_merge(array(
             "project" => "example",
             "renderer" => "smarty"
@@ -71,6 +75,10 @@ class Processor
                 rename($target, $dir . DIRECTORY_SEPARATOR . $name);
             }
         }
+
+        file_put_contents(".ethna", sprintf("[project]\ncontroller_file = '%s'\ncontroller_class = '%s'",
+            "app/{$project_class}_Controller.php/",
+            "{$project_class}_Controller"));
     }
 
     protected static function camerize($name)
