@@ -38,7 +38,6 @@ class Processor
             "app/Example_ActionForm.php",
             "app/Example_Controller.php",
             "app/Example_Error.php",
-            "app/Example_UrlHandler.php",
             "app/Example_ViewClass.php",
             "etc/example-ini.php",
             "skel/skel.action.php",
