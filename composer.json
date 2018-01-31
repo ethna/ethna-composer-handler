@@ -1,7 +1,7 @@
 {
     "name": "ethna/ethna-composer-handler",
     "description": "ethna composer handler",
-    "license": "BSD-License",
+    "license": "BSD-3-Clause",
     "authors": [
         { "name": "chobie", "email": "chobieeee@php.net", "role" : "Developer"},
         { "name": "withgod", "email": "noname@withgod.jp", "role" : "Developer"},
@@ -18,5 +18,10 @@
     "target-dir": "Ethna/ComposerHandler",
     "autoload": {
         "psr-0": { "Ethna\\ComposerHandler": "" }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "2.7.x-dev"
+        }
     }
 }
